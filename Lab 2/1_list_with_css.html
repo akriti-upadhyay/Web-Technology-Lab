@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List with CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fbfbfb; 
+        }
+        .box{
+            width: 300px;
+        }
+        .box h2{
+            color: #fbfbfb;
+            background: #187e0a;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .box ul{
+            position: relative;
+            background: #fff;
+        }
+        .box ul li{
+            list-style: none;
+            padding: 10px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 5px 25px rgba(0,0,0,.1);
+            transition: transform 0.5s;
+        }
+        .box ul li:hover{
+            transform: scale(1.1);
+            z-index: 100;
+            background: #f0ff25;
+            box-shadow: 0 5px 25px rgba(0,0,0,.2);
+            color: #187e0a;
+        }
+        .box ul li span{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;           
+            background: #00008b;
+            color: #fff;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Shopping list:</h2>
+        <ul>
+            <li><span>1</span>Eggs</li>
+            <li><span>2</span>Bread</li>
+            <li><span>3</span>Milk</li>
+            <li><span>4</span>Vegetables</li>
+            <li><span>5</span>Fruits</li>
+            <li><span>6</span>Wheat</li>
+        </ul>
+    </div>
+</body>
+</html>

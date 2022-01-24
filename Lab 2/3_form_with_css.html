@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with CSS</title>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blanchedalmond;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        form{
+            padding: 20px 100px 20px 100px; 
+            background-color: #eec50f;
+        }
+        .radio-button{
+            font-size: 20px;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        h2{
+            background-color: #0d771b;
+            color: #fff;
+            padding: 20px;
+            font-size: 30px;
+        }
+        select{
+            width: 100px;
+            font-size: 20px;
+            padding: 5px 10px 5px 10px;
+        }
+        .label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .input-field, textarea{
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            height: 20px;
+            width: 300px;
+            background-color: #f8f8ff;
+            border-radius: 1rem;
+        }
+        textarea{
+            height: 150px;
+        }
+        #submit-button{
+            width: 150px;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: 600;
+            background: #0d771b;
+            border: 2px solid black;
+            color: #fff;
+            border-radius: 2rem;
+            transition-duration: 0.4s;
+        }
+        #submit-button:hover{
+            background-color: rgb(14, 223, 101);
+            color: #0d771b;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h2>Student Registration Form</h2>
+        <label class="label" for="fname">First Name:</label><br>
+        <input class="input-field" type="text" name="fname" id="fname" placeholder="First Name">
+        <br><br>
+        <label class="label" for="mname">Middle Name:</label><br>
+        <input class="input-field" type="text" name="mname" id="mname" placeholder="Middle Name">
+        <br><br>
+        <label class="label" for="lname">Last Name:</label><br>
+        <input class="input-field" type="text" name="lname" id="lname" placeholder="Last Name">
+        <br><br>
+        <label class="label" for="course">Course: </label>
+        <select name="select" id="course">
+            <option value="mca">MCA</option>
+            <option value="msc">MSc</option>
+            <option value="mtech">Mtech</option>
+            <option value="btech">Btech</option>
+        </select>
+        <br><br>
+        <label class="label" for="gender">Gender:</label><br>
+        <div class="radio-button">
+            <input type="radio" name="gender" id="gender" value="male" checked>Male<br>
+            <input type="radio" name="gender" id="gender" value="female" checked>Female<br>
+            <input type="radio" name="gender" id="gender" value="other" checked>Other
+        </div>
+        <br><br>
+        <label class="label" for="add">Current Address:</label><br>
+        <textarea name="address" id="add" cols="30" rows="10" placeholder="Enter Current Address"></textarea>
+        <br><br>
+        <label class="label" for="email">Email:</label><br>
+        <input class="input-field" type="email" name="email" id="email" placeholder="Enter Email">
+        <br><br>
+        <label class="label" for="pass">Password:</label><br>
+        <input class="input-field" type="password" name="password" id="pass" placeholder="Enter Password">
+        <br><br>
+        <label class="label" for="repass">Re-type Password:</label><br>
+        <input class="input-field" type="password" name="repassword" id="repass" placeholder="Re-type Password">
+        <br><br>
+        <button id="submit-button" type="submit">Register</button>
+    </form>
+</body>
+</html>

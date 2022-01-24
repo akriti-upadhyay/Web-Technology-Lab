@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        .headings{
+            background: yellow;
+        }
+        .headings th{
+            padding: 10px;
+        }
+        table tr, td, th{
+            border: 3px solid black;
+        }
+        td:first-child{
+            background: #e7b4b4;
+        }
+        td{
+            background: #a8f888;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <table border=2>
+            <tr class="headings">
+                <th>Plans</th>
+                <th>Basic</th>
+                <th>Standard</th>
+                <th>Premium</th>
+            </tr>
+            <tr>
+                <td>Number of Pages</td>
+                <td>3</td>
+                <td>6</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Design Customization</td>
+                <td>No</td>
+                <td>
+                    <table border=1>
+                        <tr class="headings">
+                            <th>Plan</th>
+                            <th>Basic</th>
+                            <th>Standard</th>
+                        </tr>
+                        <tr>
+                            <td>Number of Pages</td>
+                            <td>3</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Design Customization</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Content Upload</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Responsive Design</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Total Prices</td>
+                            <td>$50</td>
+                            <td>$75</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Content Upload</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Responsive Design</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Total Prices</td>
+                <td>$50</td>
+                <td>$75</td>
+                <td>$99</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

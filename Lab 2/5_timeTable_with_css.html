@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Time Table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        caption{
+            font-size: 30px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table tr, td, th{
+            border: 3px solid black;
+        }
+        tr{
+            text-align: center;
+        }
+        th{
+            background-color: lightcoral;
+        }
+        td{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <table border=2>
+        <caption>SEC-A MCA : TIME-TABLE</caption>
+        <tr>
+            <th>DAY\TIME</th>
+            <th>10:30 AM - 11:20 AM</th>
+            <th>11:20 AM - 12:10 PM</th>
+            <th>12:10 PM - 1:30 PM</th>
+            <th>1:30 PM - 2:20 PM</th>
+            <th>2:20 PM - 3:10 PM</th>
+            <th>3:10 PM - 4:00 PM</th>
+            <th>4:00 PM - 4:50 PM</th>
+        </tr>
+        <tr>
+            <th>MONDAY</th>
+            <td>UNIX and Shell Programming</td>
+            <td>Information Security</td>
+            <td></td>
+            <td></td>
+            <td>Web Technology</td>
+            <td>Organizational behavior</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>TUESDAY</th>
+            <td></td>
+            <td>Information Security</td>
+            <td></td>
+            <td colspan="3">Web Technology LAB</td>
+            <td>UNIX and Shell Programming</td>
+        </tr>
+        <tr>
+            <th>WEDNESDAY</th>
+            <td>Distributed Technology</td>
+            <td>Information Security</td>
+            <td></td>
+            <td></td>
+            <td>Web Technology</td>
+            <td colspan="2">Organizational behavior</td>
+        </tr>
+        <tr>
+            <th>THURSDAY</th>
+            <td colspan="2">Distributed Technology</td>
+            <td></td>
+            <td colspan="3">Infomation Security Lab</td>
+            <td>UNIX and Shell Programming</td>
+        </tr>
+        <tr>
+            <th>FRIDAY</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Web Technology</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
