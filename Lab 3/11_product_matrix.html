@@ -1,0 +1,80 @@
+ <!-- 11. Product of two matrices. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product matrix</title>
+</head>
+<body>
+    <script>
+        // Matrix 1
+        const row1 = window.prompt("Enter number of Rows in m1: ");
+        const col1 = window.prompt("Enter number of Columns in m1: ");
+        let m1 = new Array(row1);
+        // Defining matrix 1
+        for(let i=0; i<row1; i++){
+            m1[i] = new Array(col1);
+        }
+        // Enter matrix 1
+        document.write(`Matrix 1: Dimentions => ${row1}x${col1}`);
+        document.write("<br>");
+        for(let i=0; i<row1; i++){
+            for(let j=0; j<col1; j++){
+                m1[i][j] = parseInt(window.prompt(`Enter m1 element at index (${i},${j})`));
+                document.write(`${m1[i][j]} `);
+            }
+            document.write("<br>");
+        }
+
+        // Matrix 2
+        const row2 = window.prompt("Enter number of Rows in m2: ");
+        const col2 = window.prompt("Enter number of Columns in m2: ");
+        let m2 = new Array(row2);
+        // Defining matrix 2
+        for(let i=0; i<row2; i++){
+            m2[i] = new Array(col2);
+        }
+        // Enter matrix 2
+        document.write("<br>");
+        document.write(`Matrix 2: Dimentions => ${row2}x${col2}`);
+        document.write("<br>");
+        for(let i=0; i<row2; i++){
+            for(let j=0; j<col2; j++){
+                m2[i][j] = parseInt(window.prompt(`Enter m2 element at index (${i},${j})`));
+                document.write(`${m2[i][j]} `);
+            }
+            document.write("<br>");
+        }
+        // cheacking condition for product of 2 matrices
+        if(col1 != row2){
+            document.write("<br>");
+            document.write("Invalid matrix dimentions!!!!");
+        }
+        else{
+            // Matrix 3 (Product)
+            let m3 = new Array(row1);
+            // Defining matrix 3
+            for(let i=0; i<row1; i++){
+                m3[i] = new Array(col2);
+                for(let j=0; j<col2; j++)
+                    m3[i][j] = 0;
+            }
+            // Product of m1 and m2
+            document.write("<br>");
+            document.write(`Product of matrix 1 and 2: Dimentions => ${row1}x${col2}`);
+            document.write("<br>");
+            for(let i=0; i<row1; i++){
+                for(let j=0; j<col2; j++){
+                    for(let k=0; k<col1; k++){
+                        m3[i][j] += m1[i][k] * m2[k][j];
+                    }
+                    document.write(`${m3[i][j]} `);
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,57 @@
+ <!-- 10. Addition of two matrices -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add matrix</title>
+</head>
+<body>
+    <script>
+        const row = window.prompt("Enter number of Rows: ");
+        const col = window.prompt("Enter number of Columns: ");
+        let m1 = new Array(row);
+        let m2 = new Array(row);
+        let m3 = new Array(row);
+        // Defining matrix 1, 2, 3
+        for(let i=0; i<row; i++){
+            m1[i] = new Array(col);
+            m2[i] = new Array(col);
+            m3[i] = new Array(col);
+        }
+        // Enter matrix 1
+        document.write("Matrix 1:");
+        document.write("<br>");
+        for(let i=0; i<row; i++){
+            for(let j=0; j<col; j++){
+                m1[i][j] = parseInt(window.prompt(`Enter m1 element at index (${i},${j})`));
+                document.write(`${m1[i][j]} `);
+            }
+            document.write("<br>");
+        }
+        // Enter matrix 2
+        document.write("<br>");
+        document.write("Matrix 2:");
+        document.write("<br>");
+        for(let i=0; i<row; i++){
+            for(let j=0; j<col; j++){
+                m2[i][j] = parseInt(window.prompt(`Enter m2 element at index (${i},${j})`));
+                document.write(`${m2[i][j]} `);
+            }
+            document.write("<br>");
+        }        
+        // Add m1 and m2
+        document.write("<br>");
+        document.write("Sum of matrix 1 and 2:");
+        document.write("<br>");
+        for(let i=0; i<row; i++){
+            for(let j=0; j<col; j++){
+                m3[i][j] = m1[i][j] + m2[i][j];
+                document.write(`${m3[i][j]} `);
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
+
+
