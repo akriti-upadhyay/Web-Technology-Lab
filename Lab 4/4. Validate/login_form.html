@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        form{
+            padding: 20px 0 0 300px
+        }
+        body{
+            background-color:powderblue ;
+        }
+        h2{
+            padding-top: 30px;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Login Details</h2>
+    <form action="#" name="login_form" onsubmit="return validate()">
+        <label for="id">Login ID:</label>
+        <input type="text" name="id" id="id">
+        <br><br>
+        <label for="pass">Password:</label>
+        <input type="password" name="password" id="pass">
+        <br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+<script>
+    let attempt = 3;
+    function validate(){
+        let loginID = document.login_form.id.value;
+        let pass = document.login_form.pass.value;
+        if(loginID.length <= 0){
+            alert("Login Id is required");
+            return false;
+        }
+        if(pass.length <= 0){
+            alert("Password is required");
+            return false;
+        }
+        if(loginID=="Akriti" && pass=="ABC"){
+            alert("Login successful!");
+            return true;
+        }
+        else{
+            attempt--;
+            alert(`Invalid ID or Password! You have ${attempt} attempts left!`);
+            if(attempt == 0){
+                document.getElementById("id").disabled = true;
+                document.getElementById("pass").disabled = true;
+                document.getElementById("submit").disabled = true;
+                document.getElementById("reset").disabled = true;
+            }
+            return false;
+        }
+    }
+</script>
+</html>
