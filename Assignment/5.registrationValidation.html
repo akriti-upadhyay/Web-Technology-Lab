@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 40px;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            background-color: yellow;
+            padding: 20px;
+            border-radius: 2rem;
+        }
+        .input-field{
+            border-radius: 1rem;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        label{
+            font-size: 20px;
+        }
+        #btn{
+            padding: 5px;
+            margin: 10px;
+            width: 100px;
+            font-size: 20px;
+            background-color: aqua;
+        }
+    </style>
+    <title>Registeration Page</title>
+</head>
+<body>
+    <br>
+    <div>
+        <h1>REGISTRATION FORM</h1>
+        <div>
+            <form action="">
+                <label for="fname"><b>First Name : </b></label><br>
+                <input class="input-field" type="text" placeholder="Enter Firstname " name="fname"
+                id="fname" onchange="return validateName()">
+                <br>
+                <br>
+                <label for="lname"><b>Last Name : </b></label><br>
+                <input class="input-field" type="text" placeholder="Enter Lastname " name="lname"
+                id="lname">
+                <br>
+                <br>
+                <label for="address"><b>Address : </b></label><br>
+                <input class="input-field" type="text" placeholder="Enter Address" name="address"
+                id="address" onchange="return validateAdd()"
+                required>
+                <br>
+                <br>
+                <label for="address"><b>Phone Number : </b></label><br>
+                <input class="input-field" type="text" placeholder="Enter Phone Number" name="pno"
+                id="pno" onchange="return validatePno()"
+                required>
+                <br>
+                <br>
+                <label for="email"><b>Email : </b></label><br>
+                <input class="input-field" type="text" placeholder="Enter Email" name="email" id="email"
+                onchange="return validateEmail()"
+                required>
+                <br>
+                <br>
+                <label for="psw"><b>Password : </b></label><br>
+                <input class="input-field" type="password" placeholder="****" name="psw" id="psw"
+                onchange="return validatePwd()" 
+                required>
+                <br>
+                <br>
+                <label for="psw-repeat"><b>Re-enter Password : </b></label><br>
+                <input class="input-field" type="password" placeholder="****" name="psw-repeat"
+                id="psw-repeat"
+                onchange="return confirmPwd()" 
+                required>
+                <br>
+                <br>
+                <button type="Submit" id=btn onclick="return
+                validate()">Register</button>
+                <button type="reset" id=btn>Clear</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function isAlpha(str) {
+            return /^[a-zA-Z]+$/.test(str);
+        }
+        function isNumber(str) {
+            return /^[0-9]+$/.test(str);
+        }
+        function validatePno() {
+            var pno = document.getElementById("pno").value;
+            if (pno.length != 10)
+            alert("Phone Number should be of only 10 digits!");
+            else if (!isNumber(pno))
+            alert("Enter a valid Phone number");
+            return false;
+        }
+        function validateName() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            console.log("hello");
+            if (!isAlpha(fname))
+            alert("First name should contain only alphabets!");
+            else if (fname.length < 6)
+            alert("First name length should be more than 5");
+            else if (lname == "")
+            alert("Can't leave Last name empty!");
+            else
+            return true;
+            return false;
+        }
+        function validateAdd() {
+            var address = document.getElementById("address").value;
+            if (address == "")
+            alert("Can't leave address empty!");
+            return false;
+        }
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+            return true;
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+        function validatePwd() {
+            var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+            var pwd = document.getElementById("psw").value;
+            if (pwd.length < 6)
+            alert("Password must be of atleast 6 characters.");
+            else if (!pwd.match(paswd))
+            alert("Password should contain special characters, digit,letters");
+            return false;
+        }
+        function confirmPwd() {
+            var pwd = document.getElementById("psw").value;
+            var cwd = document.getElementById("psw-repeat").value;
+            if (pwd != cwd)
+            alert("Password doesn't match!");
+            return false;
+        }
+        function validate() {
+            alert("You are successfully registered!");
+            return true;
+        }
+    </script>
+</body>
+</html>

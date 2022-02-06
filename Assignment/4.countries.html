@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 40px;
+        background-color: blanchedalmond;
+    }
+    #submit-button{
+        padding: 5px;
+    }
+    #output{
+        background-color: white;
+        padding: 10px;
+        border-radius: 2rem;
+    }
+    h3:first-of-type{
+        margin-bottom: -10px;
+    }
+    #output{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: bold;
+        color: blue;
+    }
+</style>
+<body>
+    <h1>Countries and their Capitals:</h1>
+    <h3><label for="country">Select a Country: </label></h3><br>
+    <select name="select" id="country">
+        <option value="default" selected>--Select--</option>
+        <option value="india">India</option>
+        <option value="germany">Germany</option>
+        <option value="russia">Russia</option>
+        <option value="china">China</option>
+        <option value="france">France</option>
+    </select>
+    <br><br>
+    <h3>Capital: </h3>
+    <span id="output"></span>
+</body>
+<script>
+    function getCapital(country){
+        let capitals = {
+        'default': '',
+        'india': 'New Delhi',
+        'germany': 'Berlin',
+        'russia': 'Moscow',
+        'china': 'Beijing',
+        'france': 'Paris'
+        }
+        const capital = capitals[country];
+        document.getElementById('output').innerHTML = capital;
+    }
+    let country = document.getElementById('country').value;
+    console.log(country);
+    getCapital(country);
+</script>
+</html>

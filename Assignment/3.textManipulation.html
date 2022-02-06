@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 40px;
+        background-color: blanchedalmond;
+    }
+    #submit-button{
+        padding: 5px;
+    }
+</style>
+<body>
+    <h1>Multi-line Text Operations:</h1>
+    <label for="text">Enter some text: </label><br>
+    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+    <br><br>
+    <input type="submit" id="submit-button" value="Submit">
+    <br><br>
+</body>
+<script>
+    function getInfo(text){
+        let totalChars = 0;
+        for(let i=0; i<text.length; i++)
+            if(text[i]!=" " && text[i]!='\n')
+                totalChars++;
+        console.log(totalChars);
+
+        const lines = text.split('\n');
+        let totalLines = lines.length;
+
+        const words = text.split(/[\s,]+/);
+        let totalWords = words.length;
+
+        window.alert(`Hence in the text:\n\nNumber of characters = ${totalChars}\nNumber of lines = ${totalLines}\nNumber of words = ${totalWords}`);
+    }
+    let text = document.getElementById('text').value;
+    let submit = document.getElementById('submit-button');
+    submit.addEventListener("click", getInfo(text));
+</script>
+</html>

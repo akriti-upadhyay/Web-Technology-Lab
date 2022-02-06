@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 40px;
+        background-color: blanchedalmond;
+    }
+    #submit-button{
+        padding: 5px;
+    }
+    #output{
+        background-color: white;
+        padding: 10px;
+        border-radius: 2rem;
+    }
+</style>
+<body>
+    <h1>Convert Number to Words</h1>
+    <label for="number">Enter a number: </label><br>
+    <input type="text" id="number">
+    <br><br>
+    <input type="submit" id="submit-button" value="Submit">
+    <br><br>
+    <h4>Result: </h4>
+    <span id="output"></span>
+</body>
+<script>
+    function toWords(num){
+        if(num<0 || num>999){
+            output.innerHTML = "Number out of Range";
+        }
+        else{
+            const ones = ['Zero','One',' Two','Three','Four','Five','Six','Seven','Eight','Nine'];
+            const twos = ['Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+            const tens = ['','Ten','Twenty','Thirty',' Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+            let str = new String(num);
+            let digits = str.split("");
+
+            const rev = digits.reverse();
+            let totalDigits = rev.length;
+            let words = [];
+            let j=0;
+            for(let i=0; i<totalDigits; i++){
+                switch(i){
+                    // Ones digit
+                    case 0:
+                        // for multiple of ten (10, 20, 30,...) or nums from 11-19
+                        if((rev[i]==0) || rev[i+1]==1)
+                            words[j] = '';
+                        else{
+                            words[j] = ones[rev[i]] + " ";
+                        }
+                        console.log(words[j]);
+                        break;
+                    // Tens digit
+                    case 1:
+                        if(rev[i]==0)
+                            words[j] = '';
+                        else if(rev[i]==1)
+                            words[j] = twos[rev[i-1]] + " ";
+                        else
+                            words[j] = tens[rev[i]] + " ";
+                        break;
+                    // Hundreth's digit
+                    case 2:
+                        if(rev[i]==0)
+                            words[j] = '';
+                        else if((rev[i-1]==0 || rev[i-2]==0))
+                            words[j] = ones[rev[i]] + " Hundred ";
+                        else
+                            words[j] = ones[rev[i]] + " Hundred and ";
+                        break;
+                    default:
+                        break;
+                }
+                j++;
+            }
+            words.reverse();
+            let finalOutput = '';
+            for(let i=0; i<totalDigits; i++)
+                finalOutput += words[i];
+            output.innerHTML = finalOutput;
+        }
+    }
+    let num = document.getElementById('number').value;
+    let submit = document.getElementById('submit-button');
+    let output = document.getElementById('output');
+    if(isNaN(num)){
+        output.innerHTML = "Not a Number";
+    }
+    else{
+        submit.addEventListener("click", toWords(parseInt(num)));
+    } 
+</script>
+</html>
