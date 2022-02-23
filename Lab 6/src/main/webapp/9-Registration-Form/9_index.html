@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+    <style>
+        body{
+            margin: 40px;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            background-color: yellow;
+            padding: 20px;
+            border-radius: 2rem;
+        }
+        .input-field{
+            border-radius: 1rem;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        label{
+            font-size: 20px;
+        }
+        button{
+            padding: 5px;
+            margin: 10px;
+            width: 100px;
+            font-size: 20px;
+            background-color: aqua;
+        }
+         */
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Registration Form</h1>
+        <form name ="registration" id="registration" action="9_regForm.jsp">
+	    <label for="firstname">First Name:</label><br>
+        <input class="input-field" type="text" name="firstname" id="firstname" value="" required>
+        <br>
+        <br>
+        <label for="lastname">Last Name:</label><br>
+        <input class="input-field" type="text" name="lastname" id="lastname" value="" required>
+        <br>
+        <br>
+        <label for="email">Email:</label><br>
+        <input class="input-field" type="email" name="email" id="email" value="" required>
+        <br>
+        <br>
+        <label for="email">Mobile Number:</label><br>
+        <input class="input-field" type="text" name="mobile" id="mobile" value="" required>
+        <br>
+        <br>
+        <label for="address">Address:</label><br>
+        <textarea class="input-field" name="address" id="address" rows="6"
+        cols="35" required></textarea>
+        <br>
+        <br>
+        <label for="password">Password:</label><br>
+        <input class="input-field" type="password" name="password" id="password" value="" required>
+        <br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" id=btn>Clear</button>
+    </form>
+</div>
+</body>
+</html>
