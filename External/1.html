@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Decimal to Octal Conversion</title>
+  <style>
+    body{
+      background-color: peachpuff;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <form name="f1" action="" method="POST" onsubmit="">
+    <table cellspacing="10" cellpadding="5">
+      <tr>
+        <td>Enter a Decimal Number:</td>
+        <td>
+          <input type="text" name="decimal"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="button" id="convert" value="Convert"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <div>
+    <div id="result"></div>
+  </div>
+</body>
+<script>
+  function decimalToOctal(decimal) {
+    decimal = parseFloat(decimal);
+    const octal = decimal.toString(8);
+    return octal;
+  }
+  
+  document.getElementById("convert").onclick = function () {
+    const decimal = document.getElementsByName("decimal")[0].value;
+    const octal = decimalToOctal(decimal);
+ 
+    document.getElementById("result").innerHTML =
+    "<h4><span>Decimal Form: </span>" + decimal + "</h4>" + "<h4><span>Octal Form: </span>" + octal + "</h4>";
+  };
+</script>    
+</html>

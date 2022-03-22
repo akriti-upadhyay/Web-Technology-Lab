@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            display: inline-block;
+            text-align: center;
+            width: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var i, j, k = 69;
+        // Upper-half
+        for (i = k; i >= 65; i--) {
+            for (j = k; j >= 65; j--) {
+                if (j > i)
+                    document.write("<div>" + String.fromCharCode(j) + "</div>");
+                else
+                    document.write("<div>" + String.fromCharCode(i) + "</div>");
+            }
+            for (j = 66; j <= k; j++) {
+                if (j > i)
+                    document.write("<div>" + String.fromCharCode(j) + "</div>");
+                else
+                    document.write("<div>" + String.fromCharCode(i) + "</div>");
+            }
+            document.write("<br>");
+        }
+        // Lower-half
+        for (i = 66; i <= k; i++) {
+            for (j = k; j >= 65; j--) {
+                if (j > i)
+                    document.write("<div>" + String.fromCharCode(j) + "</div>");
+                else
+                    document.write("<div>" + String.fromCharCode(i) + "</div>");
+            }
+            for (j = 66; j <= k; j++) {
+                if (j > i)
+                    document.write("<div>" + String.fromCharCode(j) + "</div>");
+                else
+                    document.write("<div>" + String.fromCharCode(i) + "</div>");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>
